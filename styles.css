@@ -2,25 +2,38 @@
   --white: #fff;
   --black: #000000;
   --gray1: #202020;
-  --gray2: #12181b;
-  --gray3: #2a2e35;
-  --gray4: #454e56;
-  --gray5: #6c7983;
+  --gray2: #1a1d1f;
+  --gray3: #2e2e30;
+  --gray4: #535557;
+  --gray5: #71787e;
   --gray7: #b2becd;
-  --gray8: #dbe1e8;
+  --gray8: #e3e3e4;
   --gray9: #f8f8f8;
+  --transition-speed: 600ms;
+  font-size: 16px;
+  font-family: "equinox regular";
+}
+
+@keyframes color-rotate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+
+  to {
+    filter: hue-rotate(360deg);
+  }
 }
 
 .light {
   --bg: var(--gray9);
-  --bg-nav: linear-gradient(to right, var(--gray8), var(--gray5));
+  --bg-nav: var(--gray8);
   --bg-dropdown: var(--gray9);
   --text: var(--black);
 }
 
 .dark {
   --bg: var(--gray1);
-  --bg-nav: linear-gradient(to right, var(--gray3), var(--gray5));
+  --bg-nav: var(--gray3);
   --bg-dropdown: var(--gray1);
   --text: var(--white);
 }
@@ -28,35 +41,24 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "equinox regular";
   color: var(--text);
   background: var(--bg);
   transition: background 500ms ease-in-out, color 1000ms ease-in-out;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
 }
 
 a {
   color: currentColor;
   text-decoration: none;
 }
-
-.navbar {
-  height: 70px;
-  width: 100%;
-  background: var(--bg);
-  color: var(--text);
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-.navbar-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 100%;
+main {
+  margin-left: 5rem;
+  padding: 1rem;
 }
 .logo {
   margin-left: -20px;
@@ -74,6 +76,83 @@ a {
   width: 533px;
   object-fit: cover;
 }
+.navbar {
+  position: fixed;
+  background: var(--bg-nav);
+  color: var(--text);
+  transition: width 200ms ease;
+  box-shadow: rgba(2, 8, 20, 0.1) 0px 0.175em 0.5em;
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+.nav-item {
+  width: 100%;
+}
+
+.nav-item:last-child {
+  margin-top: auto;
+}
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  color: var(--text);
+  text-decoration: none;
+  filter: grayscale(100%) opacity(0.7);
+  transition: var(--transition-speed);
+}
+
+.nav-link:hover {
+  filter: grayscale(0) opacity(1);
+  background: var(--bg-dropdown);
+}
+
+.link-text {
+  display: none;
+  margin-left: 1rem;
+}
+
+.fa-solid {
+  min-width: 2rem;
+  margin: 0 1.5rem;
+  font-size: 1.5rem;
+  color: var(--text);
+  transition: var(--transition-speed);
+}
+
+.dropdown {
+  position: absolute;
+  padding: 2rem;
+  left: 16rem;
+  bottom: 0;
+  opacity: 0;
+  z-index: 2;
+  background: var(--bg-dropdown);
+  border-left: 2px solid var(--text);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3rem;
+
+  box-shadow: rgba(2, 8, 20, 0.1) 0px 0.175em 0.5em;
+
+  transition: opacity 0.15s ease-in;
+}
+
+.has-dropdown:hover .dropdown {
+  opacity: 1;
+  pointer-events: auto;
+}
 header {
   padding: 1em;
   background: rgba(2, 8, 20, 0.1);
@@ -81,31 +160,39 @@ header {
   text-align: center;
 }
 
-.dropdown {
-  position: absolute;
-  width: 500px;
-  opacity: 0;
-  z-index: 2;
-  background: var(--bg);
-  border-top: 2px solid white;
-
-  border-bottom-right-radius: 8px;
-  border-bottom-left-radius: 8px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  height: 2rem;
-  margin-top: 2rem;
-  padding: 0.5rem;
-
-  box-shadow: rgba(2, 8, 20, 0.1) 0px 0.175em 0.5em;
-  transform: translateX(-60%);
-
-  transition: opacity 0.15s ease-out;
+/* Small Screens */
+@media only screen and (max-width: 600px) {
+    .navbar {
+        bottom: 0;
+        width: 100vw;
+        height: 5rem;
+    }
+    
+    .navbar-nav {
+        flex-direction: row;
+    }
+    
+    .nav-link {
+        justify-content: center;
+    }
+    
+    main {
+        margin: 0;
+    }
 }
+/* large Screens */
 
-.has-dropdown:focus-within .dropdown {
-  opacity: 1;
-  pointer-events: auto;
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+  }
+
+  .navbar:hover {
+    width: 16rem;
+  }
+  .navbar:hover .link-text {
+    display: block;
+  }
 }
