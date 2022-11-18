@@ -58,22 +58,23 @@ ul {
 
 main {
   margin-left: 5rem;
-  padding: 1rem;
+  padding: 2rem;
 }
 .logo {
-  margin-left: -20px;
+  margin-left: 0px;
   height: 375px;
-  width: auto;
+  width: 450px;
   margin-top: -80px;
   margin-bottom: -150px;
   position: absolute;
+  object-fit: cover;
 }
 
 .bg-image {
   padding: 0;
   margin: 0;
   height: 200px;
-  width: 533px;
+  width: 900px;
   object-fit: cover;
 }
 .navbar {
@@ -149,11 +150,10 @@ main {
   transition: opacity 0.15s ease-in;
 }
 
-.has-dropdown:hover .dropdown {
-  opacity: 1;
-  pointer-events: auto;
-}
 header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 1em;
   background: rgba(2, 8, 20, 0.1);
   margin-bottom: 1em;
@@ -162,23 +162,27 @@ header {
 
 /* Small Screens */
 @media only screen and (max-width: 600px) {
-    .navbar {
-        bottom: 0;
-        width: 100vw;
-        height: 5rem;
-    }
-    
-    .navbar-nav {
-        flex-direction: row;
-    }
-    
-    .nav-link {
-        justify-content: center;
-    }
-    
-    main {
-        margin: 0;
-    }
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content: center;
+  }
+
+  main {
+    margin: 0;
+  }
+  .has-dropdown:focus-within .dropdown {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 /* large Screens */
 
@@ -194,5 +198,9 @@ header {
   }
   .navbar:hover .link-text {
     display: block;
+  }
+  .has-dropdown:hover .dropdown {
+    opacity: 1;
+    pointer-events: auto;
   }
 }
