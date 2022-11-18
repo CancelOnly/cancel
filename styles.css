@@ -1,17 +1,25 @@
 :root {
   --white: #fff;
   --black: #000000;
-  --gray1: #202020;
-  --gray2: #1a1d1f;
-  --gray3: #2e2e30;
-  --gray4: #535557;
-  --gray5: #71787e;
-  --gray7: #b2becd;
-  --gray8: #e3e3e4;
-  --gray9: #f8f8f8;
+  --gray1: #111111;
+  --gray2: #222222;
+  --gray3: #333333;
+  --gray4: #444444;
+  --gray5: #555555;
+  --gray6: #ffffff;
+  --gray7: #81887e;
+  --gray8: #bfc7c1;
+  --gray9: #d8dcda;
+  --gray10: #edf3f2;
+  /* half life colors */
+  --orange: #fb7e14;
+  --black: #000000;
+  --gray11: #151515;
+  --gray12: #292929;
+
   --transition-speed: 600ms;
   font-size: 16px;
-  font-family: "equinox regular";
+  font-family: "Barlow Condensed";
 }
 
 @keyframes color-rotate {
@@ -25,7 +33,7 @@
 }
 
 .light {
-  --bg: var(--gray9);
+  --bg: var(--gray10);
   --bg-nav: var(--gray8);
   --bg-dropdown: var(--gray9);
   --text: var(--black);
@@ -38,12 +46,23 @@
   --text: var(--white);
 }
 
+.half-life {
+  --bg: var(--gray11);
+  --bg-nav: var(--orange);
+  --bg-dropdown: var(--gray12);
+  --text: var(--white);
+}
+
 body {
   margin: 0;
   padding: 0;
+  width: auto;
   color: var(--text);
   background: var(--bg);
   transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+}
+p {
+  font-size: 20px;
 }
 
 a {
@@ -57,14 +76,16 @@ ul {
 }
 
 main {
-  margin-left: 5rem;
+  margin-left: 15rem;
   padding: 2rem;
 }
+
 .logo {
   margin-left: 0px;
-  height: 375px;
-  width: 450px;
-  margin-top: -80px;
+  height: 100%;
+  max-height: 375px;
+  width: 100%;
+  max-width: 450px;
   margin-bottom: -150px;
   position: absolute;
   object-fit: cover;
@@ -73,9 +94,12 @@ main {
 .bg-image {
   padding: 0;
   margin: 0;
-  height: 200px;
-  width: 900px;
+  height: 400px;
+  width: 1400px;
   object-fit: cover;
+  user-select: none;
+  position: static;
+  pointer-events: none;
 }
 .navbar {
   position: fixed;
@@ -108,12 +132,10 @@ main {
   height: 5rem;
   color: var(--text);
   text-decoration: none;
-  filter: grayscale(100%) opacity(0.7);
   transition: var(--transition-speed);
 }
 
 .nav-link:hover {
-  filter: grayscale(0) opacity(1);
   background: var(--bg-dropdown);
 }
 
@@ -126,8 +148,14 @@ main {
   min-width: 2rem;
   margin: 0 1.5rem;
   font-size: 1.5rem;
-  color: var(--text);
   transition: var(--transition-speed);
+}
+
+.fa-solid:hover {
+  animation: color-rotate 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  color: red;
 }
 
 .dropdown {
@@ -155,7 +183,7 @@ header {
   flex-direction: column;
   align-items: center;
   padding: 1em;
-  background: rgba(2, 8, 20, 0.1);
+  /* background: rgba(2, 8, 20, 0.1); */
   margin-bottom: 1em;
   text-align: center;
 }
