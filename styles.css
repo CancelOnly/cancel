@@ -22,6 +22,10 @@
   font-family: "Barlow Condensed";
 }
 
+* {
+  box-sizing: border-box;
+}
+
 @keyframes color-rotate {
   from {
     filter: hue-rotate(0deg);
@@ -37,6 +41,7 @@
   --bg-nav: var(--gray8);
   --bg-dropdown: var(--gray9);
   --text: var(--black);
+  --icon: var(--text);
 }
 
 .dark {
@@ -44,6 +49,7 @@
   --bg-nav: var(--gray3);
   --bg-dropdown: var(--gray1);
   --text: var(--white);
+  --icon: var(--text);
 }
 
 .half-life {
@@ -51,12 +57,14 @@
   --bg-nav: var(--orange);
   --bg-dropdown: var(--gray12);
   --text: var(--white);
+  --icon: var(--gray12);
 }
 
 body {
   margin: 0;
   padding: 0;
-  width: auto;
+  width: 100%;
+  max-width: 1320px;
   color: var(--text);
   background: var(--bg);
   transition: background 500ms ease-in-out, color 1000ms ease-in-out;
@@ -76,37 +84,18 @@ ul {
 }
 
 main {
+  margin-top: 18rem;
   margin-left: 15rem;
   padding: 2rem;
 }
 
-.logo {
-  margin-left: 0px;
-  height: 100%;
-  max-height: 375px;
-  width: 100%;
-  max-width: 450px;
-  margin-bottom: -150px;
-  position: absolute;
-  object-fit: cover;
-}
-
-.bg-image {
-  padding: 0;
-  margin: 0;
-  height: 400px;
-  width: 1400px;
-  object-fit: cover;
-  user-select: none;
-  position: static;
-  pointer-events: none;
-}
 .navbar {
   position: fixed;
   background: var(--bg-nav);
   color: var(--text);
   transition: width 200ms ease;
   box-shadow: rgba(2, 8, 20, 0.1) 0px 0.175em 0.5em;
+  z-index: 1;
 }
 
 .navbar-nav {
@@ -130,13 +119,14 @@ main {
   display: flex;
   align-items: center;
   height: 5rem;
-  color: var(--text);
+  color: var(--icon);
   text-decoration: none;
   transition: var(--transition-speed);
 }
 
 .nav-link:hover {
   background: var(--bg-dropdown);
+  color: var(--text);
 }
 
 .link-text {
@@ -182,10 +172,47 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0;
   padding: 1em;
+  padding-top: 0;
   /* background: rgba(2, 8, 20, 0.1); */
   margin-bottom: 1em;
   text-align: center;
+}
+
+.logo-header {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#logo {
+  margin-left: 0px;
+  height: 100%;
+  max-height: 375px;
+  width: 100%;
+  max-width: 450px;
+  margin-bottom: -150px;
+  position: fixed;
+  object-fit: cover;
+  margin-top: 8rem;
+  z-index: 1;
+  transition: 0.2s;
+}
+
+#bg-image {
+  padding: 0;
+  margin: 0;
+  height: 30rem;
+  width: 1400px;
+  object-fit: cover;
+  user-select: none;
+  position: fixed;
+  pointer-events: none;
+  transition: 0.2s;
+  
 }
 
 /* Small Screens */

@@ -28,9 +28,31 @@ lightButton.onclick = () => {
 };
 
 hlButton.onclick = () => {
-    body.classList.replace('dark','half-life')
+    body.classList.replace('dark', 'half-life')
     body.classList.replace('light', 'half-life')
     localStorage.setItem('theme', 'half-life')
 }
 
-/* hover fx */
+/* scroll header */
+
+const navigation = document.getElementById('bg-image')
+const logo = document.getElementById('logo')
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        navigation.style.maxHeight = "10rem";
+        logo.style.maxHeight = "180px";
+        logo.style.maxWidth = "280px";
+        logo.style.marginTop = "2.8rem";
+    }
+    
+    else  {
+        navigation.style.maxHeight = "30rem";
+        logo.style.maxHeight = "375px";
+        logo.style.maxWidth = "450px";
+        logo.style.marginTop = "8rem";
+       
+    }
+}
