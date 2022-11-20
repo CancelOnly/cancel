@@ -17,7 +17,7 @@
   --gray11: #151515;
   --gray12: #292929;
 
-  --transition-speed: 600ms;
+  --transition-speed: 250ms;
   font-size: 16px;
   font-family: "Barlow Condensed";
 }
@@ -68,7 +68,7 @@ body {
   max-width: 1400px;
   color: var(--text);
   background: var(--bg);
-  transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+  transition: background 150ms ease-in-out, color 250ms ease-in-out;
 }
 
 body::-webkit-scrollbar {
@@ -331,14 +331,14 @@ main {
 
 /* Hidden Transition Scroll */
 
-.hidden{
+.hidden {
   opacity: 0;
   filter: blur(2px);
   transform: translateX(-5%);
-  transition: all 1.5s;
+  transition: all 0.5s;
 }
 
-.show{
+.show {
   opacity: 1;
   filter: blur(0);
   transform: translateX(0);
@@ -347,7 +347,7 @@ main {
 @media (prefers-reduced-motion) {
   .hidden {
     transition: none;
-  }  
+  }
 }
 /* Small Screens */
 @media only screen and (max-width: 600px) {
