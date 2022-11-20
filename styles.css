@@ -47,7 +47,7 @@
 .dark {
   --bg: var(--gray1);
   --bg-nav: var(--gray3);
-  --bg-dropdown: var(--gray1);
+  --bg-dropdown: var(--gray2);
   --text: var(--white);
   --icon: var(--text);
 }
@@ -64,11 +64,25 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  max-width: 1320px;
+  height: auto;
+  max-width: 1400px;
   color: var(--text);
   background: var(--bg);
   transition: background 500ms ease-in-out, color 1000ms ease-in-out;
 }
+
+body::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--bg-dropdown);
+  border-radius: 10px;
+  box-shadow: inset 2px 2px 2px hsla(0, 0% 100%, 0.25),
+    inset -2px -2px -2px rgba(0, 0, 0, 0.25);
+}
+
 p {
   font-size: 20px;
 }
@@ -82,11 +96,28 @@ ul {
   margin: 0;
   padding: 0;
 }
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 1em;
+  padding-top: 0;
+  /* background: rgba(2, 8, 20, 0.1); */
+  margin-bottom: 1em;
+  text-align: center;
+  height: auto;
+}
 
 main {
   margin-top: 18rem;
   margin-left: 15rem;
   padding: 2rem;
+  z-index: -1;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: auto;
 }
 
 .navbar {
@@ -136,7 +167,7 @@ main {
 
 .fa-solid {
   min-width: 2rem;
-  margin: 0 1.5rem;
+  margin: 0 1.6rem;
   font-size: 1.5rem;
   transition: var(--transition-speed);
 }
@@ -166,18 +197,6 @@ main {
   box-shadow: rgba(2, 8, 20, 0.1) 0px 0.175em 0.5em;
 
   transition: opacity 0.15s ease-in;
-}
-
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0;
-  padding: 1em;
-  padding-top: 0;
-  /* background: rgba(2, 8, 20, 0.1); */
-  margin-bottom: 1em;
-  text-align: center;
 }
 
 .logo-header {
@@ -211,10 +230,103 @@ header {
   user-select: none;
   position: fixed;
   pointer-events: none;
+  filter: brightness(0.9);
   transition: 0.2s;
-  
 }
 
+/* media icons */
+
+#media-icons {
+  margin-top: 25rem;
+  margin-left: 70rem;
+  font-size: 1.8rem;
+  position: fixed;
+  transition: 0.2s;
+}
+
+.fa-brands {
+  padding: 0.5rem;
+}
+
+/* Cards style */
+
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  max-width: 916px;
+  width: calc(100% - 20px);
+}
+
+.card {
+  background-color: var(--bg-dropdown);
+  border-radius: 10px;
+  cursor: pointer;
+  height: 260px;
+  position: relative;
+  width: 300px;
+}
+
+.card:hover::before,
+.card:hover > .card-border {
+  opacity: 1;
+}
+
+.card::before,
+.card > .card-border {
+  border-radius: inherit;
+  content: "";
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  transition: opacity 500ms;
+  width: 100%;
+}
+
+.card::before {
+  background: radial-gradient(
+    800px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.06),
+    transparent 40%
+  );
+  z-index: 3;
+}
+
+.card > .card-border {
+  background: radial-gradient(
+    400px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.3),
+    transparent 40%
+  );
+  z-index: 1;
+}
+
+.card > .card-content {
+  background-color: var(--card-color);
+  border-radius: inherit;
+  height: calc(100% - 2px);
+  margin: 1px;
+  position: relative;
+  width: calc(100% - 2px);
+  z-index: 2;
+}
+
+.card-content {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.footer {
+  height: 200px;
+  width: auto;
+  background-color: var(--white);
+  position: absolute;
+  top: 100%;
+  margin: 0;
+  padding: 0;
+}
 /* Small Screens */
 @media only screen and (max-width: 600px) {
   .navbar {
@@ -233,6 +345,7 @@ header {
 
   main {
     margin: 0;
+    margin-top: 12rem;
   }
   .has-dropdown:focus-within .dropdown {
     opacity: 1;

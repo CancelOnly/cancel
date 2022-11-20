@@ -31,28 +31,52 @@ hlButton.onclick = () => {
     body.classList.replace('dark', 'half-life')
     body.classList.replace('light', 'half-life')
     localStorage.setItem('theme', 'half-life')
-}
+};
 
-/* scroll header */
+//scroll header
 
 const navigation = document.getElementById('bg-image')
 const logo = document.getElementById('logo')
+const media = document.getElementById('media-icons')
 
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
-    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    if (document.body.scrollTop > 70 || document.documentElement.scrollTop > 70) {
         navigation.style.maxHeight = "10rem";
+        navigation.style.filter = "brightness(.6)";
         logo.style.maxHeight = "180px";
         logo.style.maxWidth = "280px";
         logo.style.marginTop = "2.8rem";
+        media.style.marginTop = "5rem";
+        media.style.fontSize = "1.3rem";
     }
-    
-    else  {
+
+    else {
         navigation.style.maxHeight = "30rem";
+        navigation.style.filter = "brightness(.9)";
         logo.style.maxHeight = "375px";
         logo.style.maxWidth = "450px";
         logo.style.marginTop = "8rem";
-       
+        media.style.marginTop = "25rem";
+        media.style.fontSize = "1.8rem";
+
     }
+}
+
+// Card animation
+
+const handleOnMouseMove = e => {
+    const { currentTarget: target } = e;
+
+    const rect = target.getBoundingClientRect(),
+        x = e.clientX - rect.left,
+        y = e.clientY - rect.top;
+
+    target.style.setProperty("--mouse-x", `${x}px`);
+    target.style.setProperty("--mouse-y", `${y}px`);
+}
+
+for (const card of document.querySelectorAll(".card")) {
+    card.onmousemove = e => handleOnMouseMove(e);
 }
