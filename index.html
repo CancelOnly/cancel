@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/c272474775.js" crossorigin="anonymous"></script>
     
@@ -71,7 +71,7 @@
     </nav>
     
     <header>
-        <div class="logo-header hidden">
+        <div class="logo-header">
         <img src="./images/logo.png" onmouseover="this.src='./images/logo.gif'" onmouseout="this.src='./images/logo.png'" id="logo">
         
         <img src="./images/whitenoise.webp" id="bg-image">
@@ -87,54 +87,56 @@
         </div>
        
     </header>
-    <main>
+    <main class="hidden">
    <div class="hidden">
         <h1>Hello World!</h1>
-        <h2>Studying the Odin project at the moment.</h2>
-        <p>Here i'll post all my projects:</p>
+        <h2>Focused on the Odin project at the moment.</h2>
+        <p>Here i'll post all my (finished/unfinished/WIP) projects:</p>
 </div>
-    <div id="cards" class="hidden">
+    <div id="cards">
       
-        <a href="https://cancelonly.github.io/Julia-Portfolio/"><div class="card">
+        <a href="https://cancelonly.github.io/Julia-Portfolio/"><div class="card hidden">
               
             <div class="card-border"></div>       
             <div class="card-content"><h2>First Website</h2><p>Made with little knowledge about HTML and CSS.</p></div>
               
         </div> </a>
     
-       <a href="https://cancelonly.github.io/odin_recipes/"><div class="card">
+       <a href="https://cancelonly.github.io/odin_recipes/"><div class="card hidden">
             <div class="card-border"></div>
             <div class="card-content"><h2>Odin Recipes</h2><p>Project where we put in practice the foundations of HTML and GitHub.</p></div>
         </div></a>
         
-        <a href="https://cancelonly.github.io/landing-page/"><div class="card">
+        <a href="https://cancelonly.github.io/landing-page/"><div class="card hidden">
            <div class="card-border"></div>
             <div class="card-content"><h2>Landing Page</h2><p>From this project I created an entire webpage from a design provided by the Odin Project course. Here I learned about the foundations of CSS.</p></div>
         </div></a>
         
-        <a href="https://cancelonly.github.io/rock-paper-scissors"><div class="card">
+        <a href="https://cancelonly.github.io/number-guessing-game/"><div class="card hidden">
             <div class="card-border"></div>
-            <div class="card-content"><h2>Rock, Papers and Scissors</h2><p>Minigame made with Javascript basics.</p></div>
+            <div class="card-content"><h2>Number Guessing Game</h2><p>Minigame made with Javascript basics.</p></div>
         </div></a>
         
-        <a href="https://cancelonly.github.io/number-guessing-game/"><div class="card">
+        <a href="https://cancelonly.github.io/rock-paper-scissors"><div class="card hidden">
             <div class="card-border"></div>
-            <div class="card-content"><h2>Number Guessing Game</h2><p>Another minigame made with Javascript basics.</p></div>
+            <div class="card-content"><h2>Rock, Papers and Scissors</h2><p>Minigame made with Javascript, HTML and CSS. Another Project from Odin.</p></div>
         </div></a>
         
-        <a href="https://cancelonly.github.io/rock-paper-scissors"><div class="card">
+        <a href="https://cancelonly.github.io/rock-paper-scissors"><div class="card hidden">
             <div class="card-border"></div>
             <div class="card-content"><h2>First</h2></div>
         </div></a>
         
     </div>
-
+    <div class="hidden">
     <p>In id leo mollis, aliquam neque sed, pharetra augue. Curabitur rhoncus sem faucibus, dignissim velit non, iaculis mi. Suspendisse bibendum sagittis diam in eleifend. Integer consequat augue in vestibulum volutpat. Quisque fermentum velit eget magna fermentum vulputate. Maecenas augue nulla, dapibus in molestie vitae, consectetur et sapien. Morbi velit mi, fermentum et odio pulvinar, sagittis pharetra massa.</p>
-
+</div>
+<div class="hidden">
     <p>Sed a libero iaculis, suscipit elit ut, rutrum tellus. Pellentesque ultrices ornare leo, id maximus massa. Donec magna urna, luctus non accumsan non, venenatis in ipsum. Aenean ligula dui, porta quis justo et, commodo congue diam. Sed suscipit eget erat vitae ultrices. Fusce accumsan neque rutrum ante faucibus, et suscipit libero venenatis. Pellentesque nec tincidunt elit. Cras nibh libero, euismod at urna vel, dignissim faucibus massa. Praesent pharetra, erat a viverra interdum, ex dui molestie risus, nec aliquam odio purus ac leo. Proin pellentesque enim sit amet risus tempor blandit.</p>
-
+</div>
+    <div class="hidden">
     <p>Mauris consectetur mauris ut rhoncus iaculis. Cras pharetra mauris quis eros condimentum, eu pulvinar orci laoreet. Quisque sed suscipit nisi. Phasellus lacinia eros aliquam, tincidunt felis in, ultrices mauris. Sed finibus fringilla augue, a vulputate erat condimentum vitae. Etiam consequat ipsum sed dui placerat, vel commodo lacus tempus. Nam accumsan turpis nec mi lobortis sodales congue a sem. Praesent laoreet metus leo, at posuere risus viverra a. Donec ante ex, accumsan non luctus sit amet, scelerisque eget diam.</p>
-    
+    </div>
          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis commodo quam ut tempor iaculis. Curabitur dictum tellus non nunc auctor, semper malesuada nulla vestibulum. Suspendisse quis ultrices leo, et aliquet arcu. Phasellus consectetur quis erat eget ultrices. Aenean vehicula mollis urna, eget congue felis posuere in. Vivamus molestie in nulla vitae vehicula. Praesent ut nunc lorem. Aenean imperdiet ipsum non sodales imperdiet. Ut gravida orci ex, cursus sagittis urna pellentesque hendrerit. Aenean quam felis, finibus id diam nec, varius suscipit ex. Curabitur et rutrum mi, eget varius eros. Nulla tincidunt porttitor mauris, commodo egestas orci convallis quis. Vivamus tellus mauris, tincidunt quis lacus ac, hendrerit ultricies velit. Quisque nec sapien sit amet dolor scelerisque rhoncus ac in dolor.</p>
 
     <p>Donec non justo sagittis, ornare nisl non, pretium odio. Donec faucibus ornare mauris eu maximus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris aliquam consectetur arcu nec bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean dignissim velit eu felis posuere dapibus. Aliquam et consequat nulla, ac consequat ipsum. Morbi tristique rhoncus lacus porttitor venenatis.</p>

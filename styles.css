@@ -110,7 +110,7 @@ header {
 }
 
 main {
-  margin-top: 18rem;
+  margin-top: 15rem;
   margin-left: 15rem;
   padding: 2rem;
   z-index: -1;
@@ -242,6 +242,7 @@ main {
   font-size: 1.8rem;
   position: fixed;
   transition: 0.2s;
+  color: var(--white);
 }
 
 .fa-brands {
@@ -326,6 +327,27 @@ main {
   top: 100%;
   margin: 0;
   padding: 0;
+}
+
+/* Hidden Transition Scroll */
+
+.hidden{
+  opacity: 0;
+  filter: blur(2px);
+  transform: translateX(-5%);
+  transition: all 1.5s;
+}
+
+.show{
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+@media (prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }  
 }
 /* Small Screens */
 @media only screen and (max-width: 600px) {
