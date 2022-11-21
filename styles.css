@@ -290,7 +290,7 @@ main {
   background: radial-gradient(
     800px circle at var(--mouse-x) var(--mouse-y),
     rgba(255, 255, 255, 0.06),
-    transparent 40%
+    transparent 70%
   );
   z-index: 3;
 }
@@ -298,8 +298,8 @@ main {
 .card > .card-border {
   background: radial-gradient(
     400px circle at var(--mouse-x) var(--mouse-y),
-    rgba(255, 255, 255, 0.3),
-    transparent 40%
+    rgba(255, 255, 255, 0.05),
+    transparent 60%
   );
   z-index: 1;
 }
@@ -317,16 +317,6 @@ main {
 .card-content {
   text-align: center;
   padding: 1.5rem;
-}
-
-.footer {
-  height: 200px;
-  width: auto;
-  background-color: var(--white);
-  position: absolute;
-  top: 100%;
-  margin: 0;
-  padding: 0;
 }
 
 /* Hidden Transition Scroll */
