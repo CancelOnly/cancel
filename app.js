@@ -33,7 +33,7 @@ hlButton.onclick = () => {
     localStorage.setItem('theme', 'half-life')
 };
 
-//scroll header
+// Scroll header
 
 const navigation = document.getElementById('bg-image')
 const logo = document.getElementById('logo')
