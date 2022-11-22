@@ -363,6 +363,18 @@ main {
     opacity: 1;
     pointer-events: auto;
   }
+  #logo {
+  max-height: 180px;
+  max-width: 280px;
+  margin-top: 2.8rem;
+ 
+}
+
+#bg-image {
+  height: 10rem;  
+  filter: brightness(0.6);  
+}
+
 }
 /* large Screens */
 
