@@ -47,7 +47,7 @@ function scrollFunction() {
         navigation.style.filter = "brightness(.6)";
         logo.style.maxHeight = "180px";
         logo.style.maxWidth = "280px";
-        logo.style.marginTop = "2.8rem";
+        logo.style.marginTop = "-3.5rem";
         media.style.marginTop = "5rem";
         media.style.fontSize = "1.3rem";
     }
